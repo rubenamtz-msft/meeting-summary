@@ -20,7 +20,7 @@ Also consider that you will need your docker and wsl2 installed in your computer
 --------
 This repository is intended for demo purposes and it only supports text in English. It uses Django and Postgres and a Transformer-based Machine Learning model for abstractive text summarization. For more information about the model []().The summarization model is exposed at `POST http://127.0.0.1:5000/api/summary/`.
 
-The working demo has the summarization model exposed at `POST http://summarizer-api.westus.azurecontainer.io:5000/api/model/summary/`.
+The working demo has the summarization model exposed at `POST https://acs-meeting-summarizer.com/api/model/summary/`.
 
 The expected body in your request should have the following data contract:
 ```JSON
