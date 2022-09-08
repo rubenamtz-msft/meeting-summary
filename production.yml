@@ -10,7 +10,15 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/django/Dockerfile
-    image: meeting_summary_production_django
+    image: summarizer.azurecr.io/meeting_summary_production_django:0.1.0
+    deploy:
+      resources:
+        reservations:
+          cpus: '2'
+          memory: 4G
+        # limits:
+        #   cpus: '4'
+        #   memory: 8G
     # depends_on:
       # - postgres
       # - redis
@@ -20,6 +28,16 @@ services:
     command: /start
     ports:
       - "5000:5000"
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./compose/production/nginx/Dockerfile
+    image: summarizer.azurecr.io/meeting_summary_production_nginx:0.1.0
+    ports:
+      - "80:80"
+      - "443:443"
+    domainname: acs-custom-summarizer
 
   # postgres:
   #   build:
