@@ -19,7 +19,7 @@ djangorestframework==3.12.4  # https://github.com/encode/django-rest-framework
 django-cors-headers==3.7.0 # https://github.com/adamchainz/django-cors-headers
 
 transformers==4.5.0
-torch==1.8.1+cpu
+torch==1.13.1
 torchaudio==0.8.1
 torchvision==0.9.1+cpu
 protobuf==3.17.3
